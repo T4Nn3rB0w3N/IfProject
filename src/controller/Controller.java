@@ -56,6 +56,7 @@ public class Controller
 		
 	}
 	
+	
 	public boolean validDouble(String maybeDouble)
 	{
 		boolean isValid = false;
