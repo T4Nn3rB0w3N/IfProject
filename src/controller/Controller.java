@@ -46,7 +46,7 @@ public class Controller
 	
 	private void askUser()
 	{
-		String response = JOptionPane.showInputDialog, "What is the distance???");
+		String response = JOptionPane.showInputDialog(null, "What is the distance???");
 		
 		while (!validInt(response))
 		{
