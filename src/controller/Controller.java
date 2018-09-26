@@ -19,7 +19,7 @@ public class Controller
 	 */
 	public void start()
 	{
-		loopy();
+		askUser();
 	}
 	
 	private void loopy()
@@ -46,14 +46,35 @@ public class Controller
 	
 	private void askUser()
 	{
-		String response = JOptionPane.showInputDialog(null, "What is the distance???");
+		Lifting userLift = new Lifting();
 		
-		while (!validInt(response))
+		//ask
+		String userLiftType = JOptionPane.showInputDialog(null, "What type of lift will you be doing?");
+		String userWeight = JOptionPane.showInputDialog(null, "What is the weight in pounds?");
+		String userReps = JOptionPane.showInputDialog(null, "How many reps will you do?");
+		String userPercentMaxRep = JOptionPane.showInputDialog(null, "What is the percent of your max rep will you be lifting");
+		
+		
+		//repeat until finished correctly
+		while (!validInt(userWeight))
 		{
-			response = JOptionPane.showInputDialog(null, "No! type in a valid number for distqnce");
+			userWeight = JOptionPane.showInputDialog(null, "No! Type in a valid number for weight");
 		}
 		
+		while (!validInt(userReps))
+		{
+			userReps = JOptionPane.showInputDialog(null, "You must use a valid integer number for reps");
+		}
 		
+		while (!validInt(userPercentMaxRep))
+		{
+			userPercentMaxRep = JOptionPane.showInputDialog(null, "You must use a valid integer to represent percent of max rep");
+		}
+		
+		//assign
+		userLift.setLiftType(userLiftType);
+		userLift.setWeight(Integer.parseInt(userWeight));
+		userLift.setReps(Integer.parseInt(userReps));
 	}
 	
 	
