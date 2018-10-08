@@ -19,7 +19,7 @@ public class Controller
 	 */
 	public void start()
 	{
-		askUser();
+		loopy();
 	}
 	
 	private void loopy()
@@ -33,14 +33,16 @@ public class Controller
 			JOptionPane.showMessageDialog(null,  "brother may I have some looops??");
 			//Eventually change the loop variable
 			count++;
-			if (count >= 1)
+			if (count >= 10)
 			{
 				isDone = true;  //update variable
 			}
 		}
-		for (int loop = 0; loop < 30; loop += 2)
+		
+		for (int loop = 1; loop <= 10; loop += 1)
 		{
-			JOptionPane.showMessageDialog(null, "The loop value is: " + loop);
+			askUser();
+			JOptionPane.showMessageDialog(null, "This is the " + loop + "'th Lifting object I made");
 		}
 	}
 	
@@ -53,7 +55,7 @@ public class Controller
 		String userWeight = JOptionPane.showInputDialog(null, "What is the weight in pounds?");
 		String userReps = JOptionPane.showInputDialog(null, "How many reps will you do?");
 		String userPercentMaxRep = JOptionPane.showInputDialog(null, "What is the percent of your max rep will you be lifting");
-		
+		String userSets = JOptionPane.showInputDialog(null, "How many sets will you do?");
 		
 		//repeat until finished correctly
 		while (!validInt(userWeight))
@@ -71,12 +73,20 @@ public class Controller
 			userPercentMaxRep = JOptionPane.showInputDialog(null, "You must use a valid integer to represent percent of max rep");
 		}
 		
+		while (!validInt(userSets))
+		{
+			userSets = JOptionPane.showInputDialog(null, "You must use a valid integer, human >:[");
+		}
+		
 		//assign
 		userLift.setLiftType(userLiftType);
 		userLift.setWeight(Integer.parseInt(userWeight));
 		userLift.setReps(Integer.parseInt(userReps));
+		userLift.setPercentMaxRep(Integer.parseInt(userPercentMaxRep));
+		userLift.setSets(Integer.parseInt(userSets));
+		
+		JOptionPane.showMessageDialog(null, userLift);
 	}
-	
 	
 	public boolean validDouble(String maybeDouble)
 	{
@@ -110,5 +120,16 @@ public class Controller
 		}
 		
 		return isValid;
+	}
+	
+	private void List()
+	{
+		ArrayList<Lifting> myLifts = new ArrayList<Lifting>();
+		
+		ArrayList<Integer> myNums = new ArrayList<Integer>();
+		//Have to use a Wrapper class to hold a primitive (aka, number) in a list
+		
+		
+		
 	}
 }

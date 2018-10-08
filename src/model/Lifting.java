@@ -95,4 +95,12 @@ public class Lifting
 		return sets;
 	}
 	//---------END--------------
+	
+	public String toString()
+	{
+		String description = "You're going to do " + reps + " reps of " 
+								+ liftType + " for " + sets + " sets, using "
+								+ weight + " pounds, " + percentMaxRep + " percent of your max rep. GOOD LUCK!";
+		return description;
+	}
 }
