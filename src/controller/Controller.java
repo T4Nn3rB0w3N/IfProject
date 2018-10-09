@@ -2,6 +2,9 @@ package controller;
 
 //Import Section
 import model.Lifting;
+
+import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
 
 public class Controller
@@ -130,6 +133,10 @@ public class Controller
 		//Have to use a Wrapper class to hold a primitive (aka, number) in a list
 		
 		
+		Lifting sampleLift = new Lifting();
+		Lifting otherLift = new Lifting();
 		
+		myLifts.add(sampleLift);
+		myLifts.add(sampleLift);
 	}
 }
