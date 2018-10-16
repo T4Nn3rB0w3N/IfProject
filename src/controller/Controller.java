@@ -23,6 +23,7 @@ public class Controller
 	public void start()
 	{
 		loopy();
+		List();
 	}
 	
 	private void loopy()
@@ -153,10 +154,24 @@ public class Controller
 			/**
 			 * returns the item in which the index is at
 			 */
-			JOptionPane.showMessageDialog(null, myLifts.get(index).getName());
+			JOptionPane.showMessageDialog(null, myLifts.get(index).getLiftType());
 			
 			//Good for remove, replace, change multiple values
 			Lifting currentLift = myLifts.get(index);
+			currentLift.setLiftType("The new name is " + index + " lift");
+			currentLift.setWeight(index * (int) (Math.random() * 150));
+		}
+		
+		//Standard backward loop
+		//great for removing!!
+		for (int index = myLifts.size() - 1; index >= 0; index -= 1)
+		{
+			
+		}
+		
+		for (Lifting current : myLifts)
+		{
+			JOptionPane.showMessageDialog(null, "The lift is named: " + current.getLiftType());
 		}
 	}
 }
