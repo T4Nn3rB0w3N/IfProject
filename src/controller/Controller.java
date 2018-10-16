@@ -135,8 +135,28 @@ public class Controller
 		
 		Lifting sampleLift = new Lifting();
 		Lifting otherLift = new Lifting();
+		/**
+		 * @param sampleLift being added to the myLifts list
+		 */
+		myLifts.add(sampleLift);
+		myLifts.add(sampleLift);
+		myLifts.add(otherLift);
 		
-		myLifts.add(sampleLift);
-		myLifts.add(sampleLift);
+		//Standard forward loop
+		//if used to remove you have to change index -=1
+		/**
+		 * size returns the number of the objects in the array list
+		 */
+		for (int index = 0; index < myLifts.size(); index +=1)
+		{
+			//Good for display, or minor changes
+			/**
+			 * returns the item in which the index is at
+			 */
+			JOptionPane.showMessageDialog(null, myLifts.get(index).getName());
+			
+			//Good for remove, replace, change multiple values
+			Lifting currentLift = myLifts.get(index);
+		}
 	}
 }
